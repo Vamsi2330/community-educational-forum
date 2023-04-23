@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login to</title>
+</head>
+<body>
+	<h1>Login Page</h1>
+	<form method="post" action="authenticate.php">
+		<label for="username">Username:</label>
+		<input type="text" id="username" name="username" required><br><br>
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="password" required><br><br>
+		<input type="submit" value="Login">
+	</form>
+</body>
+</html>
+<?php
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+// TODO: validate username and password against database or other authentication system
+
+if ($valid) {
+    // Redirect user to the dashboard or home page
+    header('Location: dashboard.php');
+    exit;
+} else {
+    // Display an error message and prompt user to try again
+    echo "Invalid username or password. Please try again.";
+}
+?>
